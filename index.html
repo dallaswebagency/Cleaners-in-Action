@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleaners in Action | Professional Cleaning Services in Calgary and Airdrie</title>
+<meta name="description" content="Residential, commercial, office and post construction cleaning in Calgary and Airdrie. Over 30 years of experience. Call (403) 681-9672 for a free estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2F6DB0;
+  --blue-2:#3B80C8;
+  --navy:#0D2847;
+  --navy-2:#123560;
+  --gold:#F5B31B;
+  --gold-2:#FFC845;
+  --ice:#EEF4FB;
+  --ice-2:#DCE8F5;
+  --ink:#13223A;
+  --muted:#5A6B82;
+  --line:#D5E0EC;
+  --white:#fff;
+  --display:'Barlow Condensed',Impact,sans-serif;
+  --body:'Source Sans 3',system-ui,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--white);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+.display{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:.92}
+
+/* ---------- utility bar ---------- */
+.util{background:var(--navy);color:#C9D7EA;font-size:14px}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:20px}
+.util span{display:inline-flex;align-items:center;gap:8px}
+.util .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.util a{color:var(--gold-2);font-weight:700;letter-spacing:.02em}
+.util-left{display:flex;gap:26px}
+
+/* ---------- header ---------- */
+header.site{background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);transition:box-shadow .3s}
+header.site.scrolled{box-shadow:0 10px 30px -18px rgba(13,40,71,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:92px;gap:24px}
+.logo img{height:68px;width:auto}
+nav.main ul{display:flex;list-style:none;gap:4px}
+nav.main a{white-space:nowrap;font-family:var(--display);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);padding:8px 11px;position:relative}
+nav.main a::after{content:"";position:absolute;left:11px;right:11px;bottom:2px;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav.main a:hover::after,nav.main a.active::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.04em;padding:14px 26px;border:2px solid transparent;transition:all .25s;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--navy);color:#fff}
+.btn-line{border-color:var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn svg{width:18px;height:18px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger span{display:block;height:3px;background:var(--navy);margin:6px 8px;transition:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;min-height:640px;padding-top:56px;padding-bottom:90px}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--blue)}
+.kicker::before{content:"";width:34px;height:3px;background:var(--gold)}
+.hero h1{font-size:clamp(52px,6.6vw,96px);font-weight:800;font-style:italic;color:var(--navy);margin:20px 0 24px}
+.hero h1 .blue{color:var(--blue)}
+.hero h1 .sweep{position:relative;display:inline-block}
+.hero h1 .sweep::after{content:"";position:absolute;left:-4px;right:-6px;bottom:.06em;height:.2em;background:var(--gold);z-index:-1;transform:skewX(-14deg)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:520px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-meta{display:flex;gap:34px;margin-top:42px;padding-top:26px;border-top:1px solid var(--line);max-width:540px}
+.hero-meta div{font-size:14px;color:var(--muted);line-height:1.35}
+.hero-meta strong{display:block;font-family:var(--display);font-size:34px;font-weight:800;color:var(--navy);line-height:1}
+
+.hero-visual{position:relative;height:540px}
+.slab{position:absolute;inset:0 0 0 8%;background:var(--blue);clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.slab-photo{position:absolute;top:28px;right:-6%;bottom:28px;left:14%;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);overflow:hidden}
+.slab-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 30%;transform:scale(1.04);transition:transform 6s ease}
+.hero:hover .slab-photo img{transform:scale(1.1)}
+.stamp{position:absolute;left:0;bottom:40px;width:170px;height:170px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;text-align:center;box-shadow:0 20px 40px -20px rgba(13,40,71,.6);z-index:3}
+.stamp svg{position:absolute;inset:0;animation:spin 22s linear infinite}
+.stamp b{font-family:var(--display);font-size:62px;font-weight:800;font-style:italic;line-height:.8;display:block}
+.stamp small{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-tag{position:absolute;top:60px;left:6%;z-index:3;background:#fff;padding:14px 18px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);font-size:16px;box-shadow:0 14px 30px -16px rgba(13,40,71,.5);border-left:5px solid var(--gold)}
+.hero-tag span{display:block;font-size:13px;color:var(--blue);letter-spacing:.12em}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--navy);color:#fff;overflow:hidden;transform:skewY(-1.6deg);margin-top:-34px;position:relative;z-index:4;border-top:4px solid var(--gold)}
+.ticker-track{display:flex;gap:46px;white-space:nowrap;padding:20px 0;animation:tick 34s linear infinite;width:max-content}
+.ticker-track span{font-family:var(--display);font-weight:700;font-style:italic;text-transform:uppercase;font-size:30px;letter-spacing:.02em;display:inline-flex;align-items:center;gap:46px}
+.ticker-track span::after{content:"";width:14px;height:14px;background:var(--gold);transform:rotate(45deg)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- intro ---------- */
+.intro{padding:130px 0 100px}
+.intro .wrap{display:grid;grid-template-columns:300px 1fr;gap:70px;align-items:start}
+.intro .big{font-family:var(--display);font-weight:800;font-style:italic;font-size:200px;line-height:.78;color:var(--blue);position:relative}
+.intro .big sup{font-size:90px;color:var(--gold);vertical-align:top;position:relative;top:.1em}
+.intro .big-cap{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);margin-top:16px;font-size:18px}
+.intro h2{font-size:clamp(38px,4.4vw,60px);font-weight:800;color:var(--navy);margin-bottom:26px}
+.intro h2 em{color:var(--blue);font-style:italic}
+.intro p{font-size:19px;color:var(--muted);max-width:720px}
+.intro-points{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:2px solid var(--navy)}
+.intro-points div{padding:22px 22px 0 0}
+.intro-points div+div{padding-left:22px;border-left:1px solid var(--line)}
+.intro-points h4{font-family:var(--display);font-size:22px;text-transform:uppercase;color:var(--navy);font-weight:700;letter-spacing:.02em}
+.intro-points p{font-size:15.5px;margin-top:6px}
+
+/* ---------- services index ---------- */
+.services{background:var(--ice);padding:110px 0 120px;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(44px,5vw,72px);font-weight:800;font-style:italic;color:var(--navy)}
+.sec-head p{max-width:380px;color:var(--muted)}
+.svc-list{border-top:2px solid var(--navy)}
+.svc{display:grid;grid-template-columns:90px 1fr 1fr 220px 60px;align-items:center;gap:26px;padding:26px 20px;border-bottom:1px solid #C4D3E4;position:relative;transition:background .35s,color .35s;cursor:pointer;overflow:hidden}
+.svc::before{content:"";position:absolute;inset:0;background:var(--navy);transform:translateX(-101%);transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:0}
+.svc>*{position:relative;z-index:1}
+.svc:hover::before{transform:translateX(0)}
+.svc .num{font-family:var(--display);font-weight:800;font-style:italic;font-size:44px;color:var(--blue);transition:color .3s}
+.svc h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(28px,2.8vw,40px);line-height:.95;color:var(--navy);transition:color .3s}
+.svc p{color:var(--muted);font-size:16px;transition:color .3s}
+.svc .thumb{height:110px;overflow:hidden;clip-path:polygon(12% 0,100% 0,88% 100%,0 100%);transition:transform .4s}
+.svc .thumb img{width:100%;height:100%;object-fit:cover}
+.svc .arrow{width:52px;height:52px;border:2px solid var(--navy);display:grid;place-items:center;transition:all .3s}
+.svc .arrow svg{width:20px;height:20px;stroke:var(--navy);transition:stroke .3s}
+.svc:hover .num{color:var(--gold)}
+.svc:hover h3{color:#fff}
+.svc:hover p{color:#BFD0E6}
+.svc:hover .arrow{background:var(--gold);border-color:var(--gold)}
+.svc:hover .thumb{transform:scale(1.05)}
+
+/* ---------- property tabs ---------- */
+.spaces{padding:120px 0}
+.spaces .sec-head{margin-bottom:40px}
+.tabs{display:flex;gap:0;border:2px solid var(--navy);width:max-content;margin-bottom:40px}
+.tab{background:#fff;border:0;font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.04em;padding:14px 30px;cursor:pointer;color:var(--navy);transition:.25s}
+.tab+.tab{border-left:2px solid var(--navy)}
+.tab.on{background:var(--navy);color:#fff}
+.panel{display:none;grid-template-columns:1.25fr 1fr;gap:0;background:var(--navy);color:#fff;min-height:440px}
+.panel.on{display:grid;animation:fade .5s ease}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.panel .pimg{position:relative;overflow:hidden}
+.panel .pimg img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.panel .pimg::after{content:"";position:absolute;top:0;right:-1px;bottom:0;width:90px;background:var(--navy);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.panel .ptxt{padding:56px 54px;display:flex;flex-direction:column;justify-content:center}
+.panel .ptxt .kicker{color:var(--gold-2)}
+.panel h3{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:52px;line-height:.92;margin:16px 0 18px}
+.panel p{color:#BFD0E6}
+.panel ul{list-style:none;margin:22px 0 30px}
+.panel li{padding:9px 0 9px 30px;border-bottom:1px solid rgba(255,255,255,.12);position:relative;font-weight:600}
+.panel li::before{content:"";position:absolute;left:0;top:17px;width:12px;height:12px;background:var(--gold);transform:rotate(45deg)}
+.panel .btn-gold:hover{background:#fff;color:var(--navy)}
+
+/* ---------- and more band ---------- */
+.more{position:relative;color:#fff;overflow:hidden;background:var(--navy)}
+.more .bg{position:absolute;inset:0}
+.more .bg img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.more .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,40,71,.97) 0%,rgba(13,40,71,.88) 45%,rgba(13,40,71,.25) 100%)}
+.more .wrap{position:relative;padding-top:110px;padding-bottom:110px}
+.more h2{font-size:clamp(70px,10vw,150px);font-weight:800;font-style:italic;color:#fff}
+.more h2 span{color:var(--gold)}
+.more p{max-width:480px;color:#C9D7EA;margin:18px 0 36px;font-size:19px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;max-width:620px}
+.chip{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:20px;padding:12px 22px;border:2px solid rgba(255,255,255,.4);transition:.25s}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ---------- estimate ---------- */
+.estimate{padding:120px 0;background:#fff}
+.est-grid{display:grid;grid-template-columns:1fr 1.1fr;box-shadow:0 40px 80px -50px rgba(13,40,71,.55)}
+.est-call{background:var(--blue);color:#fff;padding:60px 54px;position:relative;overflow:hidden}
+.est-call::after{content:"";position:absolute;right:-80px;bottom:-80px;width:260px;height:260px;border:40px solid rgba(255,255,255,.08);transform:rotate(45deg)}
+.est-call .kicker{color:#fff}
+.est-call .kicker::before{background:var(--gold)}
+.est-call h2{font-size:clamp(42px,4.4vw,62px);font-weight:800;font-style:italic;margin:18px 0 20px}
+.est-call p{color:#DCE8F5;max-width:400px}
+.phone-big{display:block;font-family:var(--display);font-weight:800;font-size:clamp(44px,5vw,66px);color:var(--gold-2);margin:34px 0 6px;letter-spacing:.01em;line-height:1}
+.phone-big:hover{color:#fff}
+.est-call small{font-family:var(--display);text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:#DCE8F5}
+.est-areas{display:flex;gap:10px;margin-top:40px}
+.est-areas span{background:var(--navy);padding:8px 16px;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.est-form{background:var(--ice);padding:56px 54px}
+.est-form h3{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:34px;color:var(--navy);margin-bottom:24px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--navy)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;padding:13px 14px;border:2px solid var(--line);background:#fff;color:var(--ink);border-radius:0;outline:none;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue)}
+.field textarea{min-height:110px;resize:vertical}
+.est-form .btn{margin-top:22px;width:100%;justify-content:center}
+.form-note{display:none;margin-top:16px;padding:14px 16px;background:#fff;border-left:5px solid var(--gold);font-weight:600;color:var(--navy)}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy);color:#C9D7EA;padding-top:80px}
+.f-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.12)}
+.f-logo{background:#fff;display:inline-block;padding:14px 18px}
+.f-logo img{height:64px}
+.f-top p{margin-top:20px;max-width:340px;font-size:15.5px}
+footer h5{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:16px;color:var(--gold-2);margin-bottom:18px}
+footer ul{list-style:none}
+footer li{padding:5px 0}
+footer li a:hover{color:#fff}
+.f-phone{font-family:var(--display);font-weight:800;font-size:36px;color:#fff;display:block;line-height:1}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:14px;flex-wrap:wrap}
+.f-bottom a{color:var(--gold-2);font-weight:700}
+.f-bottom a:hover{color:#fff}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1320px){
+  nav.main a{font-size:15px;padding:8px 7px}
+  .head-cta{display:none}
+}
+@media (max-width:1100px){.head-cta{display:inline-flex;margin-left:auto}}
+@media (max-width:640px){.head-cta{display:none!important}}
+@media (max-width:1100px){
+  .burger{display:block}
+  nav.main{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:3px solid var(--gold);display:none}
+  nav.main.open{display:block}
+  nav.main ul{flex-direction:column;padding:10px 20px 20px}
+  nav.main a{display:block;font-size:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+  nav.main a::after{display:none}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);min-height:0;padding-bottom:70px}
+  .hero-visual{height:420px}
+  .intro .wrap{grid-template-columns:1fr;gap:30px}
+  .intro .big{font-size:150px}
+  .svc{grid-template-columns:60px 1fr 140px;gap:18px}
+  .svc p,.svc .arrow{display:none}
+  .panel,.panel.on{grid-template-columns:1fr}
+  .panel .pimg{height:280px}
+  .panel .pimg::after{display:none}
+  .est-grid{grid-template-columns:1fr}
+  .f-top{grid-template-columns:1fr 1fr}
+  .f-top>div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .util-left span:nth-child(2){display:none}
+  header .wrap{height:76px}
+  .logo img{height:52px}
+  .hero .wrap{padding-top:36px}
+  .hero h1{font-size:clamp(40px,12vw,56px);overflow-wrap:break-word}
+  .kicker{font-size:13px;letter-spacing:.1em}
+  body{overflow-x:hidden}
+  .hero-meta{gap:20px}
+  .hero-meta strong{font-size:28px}
+  .hero-visual{height:340px}
+  .stamp{width:124px;height:124px;bottom:10px}
+  .stamp b{font-size:44px}
+  .stamp small{font-size:12px}
+  .hero-tag{top:20px}
+  .ticker-track span{font-size:22px}
+  .intro{padding:90px 0 70px}
+  .intro-points{grid-template-columns:1fr}
+  .intro-points div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);margin-top:18px}
+  .sec-head{flex-direction:column;align-items:start;gap:14px}
+  .svc{grid-template-columns:44px 1fr;padding:20px 8px}
+  .svc .thumb{grid-column:1/-1;height:130px;clip-path:none}
+  .svc .num{font-size:32px}
+  .tabs{width:100%}
+  .tab{flex:1;padding:12px 8px;font-size:16px}
+  .panel .ptxt,.est-call,.est-form{padding:38px 22px}
+  .panel h3{font-size:40px}
+  .fgrid{grid-template-columns:1fr}
+  .more .wrap{padding-top:80px;padding-bottom:80px}
+  .chip{font-size:17px;padding:10px 16px}
+  .f-top{grid-template-columns:1fr;gap:36px}
+  .f-bottom{flex-direction:column;align-items:start}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="util-left">
+      <span><i class="dot"></i>Serving Calgary &amp; Airdrie</span>
+      <span><i class="dot"></i>Over 30 Years of Experience</span>
+    </div>
+    <a href="tel:4036819672">(403) 681-9672</a>
+  </div>
+</div>
+
+<header class="site" id="top">
+  <div class="wrap">
+    <a href="https://www.cleanersinaction.ca/" class="logo"><img src="images/logo.jpg" alt="Cleaners in Action | Professional Cleaning Services in Calgary and Airdrie"></a>
+    <nav class="main" id="nav">
+      <ul>
+        <li><a href="https://www.cleanersinaction.ca/" class="active">Home</a></li>
+        <li><a href="https://www.cleanersinaction.ca/residential">Residential</a></li>
+        <li><a href="https://www.cleanersinaction.ca/commercial">Commercial</a></li>
+        <li><a href="https://www.cleanersinaction.ca/office-buildings">Office Buildings</a></li>
+        <li><a href="https://www.cleanersinaction.ca/construction">Construction</a></li>
+        <li><a href="https://www.cleanersinaction.ca/other-services">Other Services</a></li>
+        <li><a href="https://www.cleanersinaction.ca/about">About</a></li>
+        <li><a href="https://www.cleanersinaction.ca/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#estimate" class="btn btn-gold head-cta">Free Estimate</a>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kicker">Residential · Commercial · Office · Construction</span>
+      <h1 class="display">Professional <span class="blue">Cleaning</span> Services in <span class="sweep">Calgary</span> and Airdrie</h1>
+      <p class="lead">Cleaners in Action offers residential, commercial and office cleaning across Calgary and Airdrie, backed by more than 30 years of experience and a long list of repeat customers.</p>
+      <div class="hero-ctas">
+        <a href="#estimate" class="btn btn-gold">Request a Free Estimate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="tel:4036819672" class="btn btn-line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          (403) 681-9672</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>30+</strong>Years of<br>experience</div>
+        <div><strong>2</strong>Cities served:<br>Calgary &amp; Airdrie</div>
+        <div><strong>Free</strong>Estimates for<br>every property</div>
+      </div>
+    </div>
+    <div class="hero-visual rv">
+      <div class="slab"></div>
+      <div class="slab-photo"><img src="images/team-kitchen.jpg" alt="Cleaners in Action team cleaning a home kitchen"></div>
+      <div class="hero-tag"><span>Homes · Businesses · Offices</span>Cleaning done right</div>
+      <div class="stamp">
+        <svg viewBox="0 0 170 170"><defs><path id="c" d="M85,85 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0"/></defs><text font-family="Barlow Condensed" font-weight="700" font-size="14" letter-spacing="3.2" fill="#0D2847"><textPath href="#c">REPEAT CUSTOMERS · CALGARY · AIRDRIE · </textPath></text></svg>
+        <div><b>30+</b><small>Years</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>House Cleaning</span><span>Commercial Cleaning</span><span>Office &amp; Janitorial</span><span>Post Construction Clean-Up</span><span>Carpet Cleaning</span><span>Window Cleaning</span><span>Floor Waxing</span><span>And More!</span>
+    <span>House Cleaning</span><span>Commercial Cleaning</span><span>Office &amp; Janitorial</span><span>Post Construction Clean-Up</span><span>Carpet Cleaning</span><span>Window Cleaning</span><span>Floor Waxing</span><span>And More!</span>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="rv">
+      <div class="big">30<sup>+</sup></div>
+      <div class="big-cap">Years keeping Calgary &amp; Airdrie clean</div>
+    </div>
+    <div class="rv">
+      <h2 class="display">Experience you can see, <em>customers who come back</em></h2>
+      <p>For more than three decades, Cleaners in Action has looked after homes, commercial spaces and office buildings across Calgary and Airdrie. Much of our work comes from repeat customers who trust us to keep their spaces spotless, season after season.</p>
+      <div class="intro-points">
+        <div><h4>30+ Years</h4><p>Decades of hands-on cleaning experience behind every job.</p></div>
+        <div><h4>Repeat Customers</h4><p>Clients who keep calling us back, year after year.</p></div>
+        <div><h4>Local to You</h4><p>Proudly serving Calgary and Airdrie properties.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display">What we clean</h2>
+      <p>From family homes to multi-storey office buildings, one call covers it. Pick a service to learn more.</p>
+    </div>
+    <div class="svc-list">
+      <a class="svc rv" href="https://www.cleanersinaction.ca/residential">
+        <span class="num">01</span>
+        <h3>Professional House Cleaning</h3>
+        <p>Thorough residential cleaning for homes across Calgary and Airdrie.</p>
+        <div class="thumb"><img src="images/residential.jpg" alt="Clean residential kitchen"></div>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc rv" href="https://www.cleanersinaction.ca/commercial">
+        <span class="num">02</span>
+        <h3>Commercial Cleaning</h3>
+        <p>Retail stores and commercial spaces kept clean for staff and customers.</p>
+        <div class="thumb"><img src="images/commercial.jpg" alt="Clean commercial retail space"></div>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc rv" href="https://www.cleanersinaction.ca/office-buildings">
+        <span class="num">03</span>
+        <h3>Office Cleaning &amp; Janitorial</h3>
+        <p>Janitorial services for offices and office buildings of every size.</p>
+        <div class="thumb"><img src="images/office.jpg" alt="Office building"></div>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc rv" href="https://www.cleanersinaction.ca/construction">
+        <span class="num">04</span>
+        <h3>Post Construction Clean-Up</h3>
+        <p>Dust, debris and residue cleared after builds and renovations.</p>
+        <div class="thumb"><img src="images/construction.jpg" alt="Construction site"></div>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="svc rv" href="https://www.cleanersinaction.ca/other-services">
+        <span class="num">05</span>
+        <h3>And More!</h3>
+        <p>Carpet, window and floor waxing services to finish the job.</p>
+        <div class="thumb"><img src="images/other.jpg" alt="Floor machine waxing a floor"></div>
+        <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="spaces">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display">What are we<br>cleaning for you?</h2>
+      <p>We provide free estimates for homes, commercial spaces and office buildings. Choose yours.</p>
+    </div>
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-t="home" role="tab">Homes</button>
+      <button class="tab" data-t="comm" role="tab">Commercial</button>
+      <button class="tab" data-t="office" role="tab">Office Buildings</button>
+    </div>
+    <div class="panel on" id="home">
+      <div class="pimg"><img src="images/team-kitchen.jpg" alt="Cleaners in Action cleaning a home"></div>
+      <div class="ptxt">
+        <span class="kicker">Residential</span>
+        <h3>A cleaner home, without lifting a finger</h3>
+        <p>Professional house cleaning for families and homeowners in Calgary and Airdrie.</p>
+        <ul><li>Professional house cleaning</li><li>Carpet and window cleaning</li><li>Free estimate for your home</li></ul>
+        <a href="#estimate" class="btn btn-gold" style="align-self:start">Get My Home Estimate</a>
+      </div>
+    </div>
+    <div class="panel" id="comm">
+      <div class="pimg"><img src="images/commercial.jpg" alt="Commercial space"></div>
+      <div class="ptxt">
+        <span class="kicker">Commercial</span>
+        <h3>Spaces that welcome every customer</h3>
+        <p>Commercial cleaning for stores and businesses, plus post construction clean-up when the builders leave.</p>
+        <ul><li>Commercial cleaning</li><li>Floor waxing</li><li>Post construction clean-up</li></ul>
+        <a href="#estimate" class="btn btn-gold" style="align-self:start">Get My Business Estimate</a>
+      </div>
+    </div>
+    <div class="panel" id="office">
+      <div class="pimg"><img src="images/office-building.jpg" alt="Office building"></div>
+      <div class="ptxt">
+        <span class="kicker">Office Buildings</span>
+        <h3>Offices your team is proud of</h3>
+        <p>Office cleaning and janitorial services for office buildings across Calgary and Airdrie.</p>
+        <ul><li>Office cleaning &amp; janitorial</li><li>Carpet, window and floor care</li><li>Free estimate for your building</li></ul>
+        <a href="#estimate" class="btn btn-gold" style="align-self:start">Get My Office Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="more">
+  <div class="bg"><img src="images/floor-machine.jpg" alt="Floor waxing machine on a polished floor"></div>
+  <div class="wrap rv">
+    <span class="kicker" style="color:#FFC845">Other Services</span>
+    <h2 class="display">And <span>More!</span></h2>
+    <p>Beyond regular cleaning, we take care of the specialty jobs too.</p>
+    <div class="chips">
+      <span class="chip">Carpet Cleaning</span>
+      <span class="chip">Window Cleaning</span>
+      <span class="chip">Floor Waxing</span>
+      <span class="chip">Post Construction</span>
+      <span class="chip">Janitorial</span>
+    </div>
+    <a href="https://www.cleanersinaction.ca/other-services" class="btn btn-gold" style="margin-top:38px">See Other Services</a>
+  </div>
+</section>
+
+<section class="estimate" id="estimate">
+  <div class="wrap">
+    <div class="est-grid rv">
+      <div class="est-call">
+        <span class="kicker">Free Estimate</span>
+        <h2 class="display">Let's get your space in action</h2>
+        <p>Get in touch for a free estimate on your home, commercial space or office building.</p>
+        <a href="tel:4036819672" class="phone-big">403.681.9672</a>
+        <small>Call us today</small>
+        <div class="est-areas"><span>Calgary</span><span>Airdrie</span></div>
+      </div>
+      <form class="est-form" id="estForm">
+        <h3>Request a Free Estimate</h3>
+        <div class="fgrid">
+          <div class="field"><label for="fn">Name</label><input id="fn" required></div>
+          <div class="field"><label for="fp">Phone</label><input id="fp" type="tel" required></div>
+          <div class="field"><label for="ft">Property</label>
+            <select id="ft"><option>Home</option><option>Commercial space</option><option>Office building</option></select></div>
+          <div class="field"><label for="fc">City</label>
+            <select id="fc"><option>Calgary</option><option>Airdrie</option></select></div>
+          <div class="field full"><label for="fs">Service</label>
+            <select id="fs"><option>House cleaning</option><option>Commercial cleaning</option><option>Office cleaning &amp; janitorial</option><option>Post construction clean-up</option><option>Carpet cleaning</option><option>Window cleaning</option><option>Floor waxing</option></select></div>
+          <div class="field full"><label for="fm">Tell us about the job</label><textarea id="fm"></textarea></div>
+        </div>
+        <button class="btn btn-gold" type="submit">Send My Request</button>
+        <div class="form-note" id="formNote">Thanks! We'll be in touch soon. For a faster answer, call (403) 681-9672.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a href="#top" class="f-logo"><img src="images/logo.jpg" alt="Cleaners in Action"></a>
+        <p>Professional cleaning services in Calgary and Airdrie, with over 30 years of experience. Support your local Airdrie businesses.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="https://www.cleanersinaction.ca/residential">Residential</a></li>
+          <li><a href="https://www.cleanersinaction.ca/commercial">Commercial</a></li>
+          <li><a href="https://www.cleanersinaction.ca/office-buildings">Office Buildings</a></li>
+          <li><a href="https://www.cleanersinaction.ca/construction">Construction</a></li>
+          <li><a href="https://www.cleanersinaction.ca/other-services">Other Services</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:4036819672" class="f-phone">(403) 681-9672</a>
+        <ul style="margin-top:16px">
+          <li>Calgary &amp; Airdrie, Alberta</li>
+          <li><a href="https://www.cleanersinaction.ca/about">About Us</a></li>
+          <li><a href="https://www.cleanersinaction.ca/contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; <span id="yr">2026</span> Cleaners in Action. All rights reserved.</span>
+      <span><a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Design by Cleaning Digital.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const hdr=document.querySelector('header.site');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+document.getElementById('burger').onclick=()=>document.getElementById('nav').classList.toggle('open');
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on');
+});
+document.getElementById('estForm').onsubmit=e=>{e.preventDefault();document.getElementById('formNote').style.display='block';e.target.reset()};
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
